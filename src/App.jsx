@@ -10,6 +10,7 @@ import Stats from './sections/Stats';
 import ParallaxGallery from './sections/ParallaxGallery';
 import Pricing from './sections/Pricing';
 import Testimonials from './sections/Testimonials';
+import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* Footer Section */}
       <Footer />
