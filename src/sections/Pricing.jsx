@@ -141,26 +141,42 @@ const Pricing = () => {
               </ul>
 
               {/* CTA Button */}
-              <button
-                onClick={() => handlePlanClick(plan)}
-                className={`w-full py-2.5 md:py-3 rounded-full font-display text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 ${
-                  plan.highlighted
-                    ? 'bg-neon-cyan text-void-black hover:bg-neon-soft'
-                    : 'border border-white/20 text-white hover:border-neon-cyan hover:text-neon-cyan'
-                }`}
-              >
-                {plan.name === 'CUSTOM' || plan.name === 'ENTERPRISE' ? (
-                  <>
-                    <Building2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    {plan.cta}
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    {plan.cta}
-                  </>
-                )}
-              </button>
+              {plan.paymentUrl ? (
+                <a
+                  href={plan.paymentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-2.5 md:py-3 rounded-full font-display text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 ${
+                    plan.highlighted
+                      ? 'bg-neon-cyan text-void-black hover:bg-neon-soft'
+                      : 'border border-white/20 text-white hover:border-neon-cyan hover:text-neon-cyan'
+                  }`}
+                >
+                  <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  {plan.cta}
+                </a>
+              ) : (
+                <button
+                  onClick={() => handlePlanClick(plan)}
+                  className={`w-full py-2.5 md:py-3 rounded-full font-display text-xs md:text-sm uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 ${
+                    plan.highlighted
+                      ? 'bg-neon-cyan text-void-black hover:bg-neon-soft'
+                      : 'border border-white/20 text-white hover:border-neon-cyan hover:text-neon-cyan'
+                  }`}
+                >
+                  {plan.name === 'CUSTOM' || plan.name === 'ENTERPRISE' ? (
+                    <>
+                      <Building2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                      {plan.cta}
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                      {plan.cta}
+                    </>
+                  )}
+                </button>
+              )}
             </div>
           ))}
         </div>
