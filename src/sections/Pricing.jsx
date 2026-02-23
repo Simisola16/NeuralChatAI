@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Check, Sparkles, ArrowRight, Building2, CreditCard, FileText, Send } from 'lucide-react';
-import { pricingConfig } from '../config';
+import { pricingConfig, emailConfig } from '../config';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -119,9 +119,28 @@ const Pricing = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Construct email body
+    const emailBody = `
+Name: ${invoiceForm.name}
+Company: ${invoiceForm.company}
+Email: ${invoiceForm.email}
+Contact Person: ${invoiceForm.contactPerson}
+Phone Number: ${invoiceForm.phoneNumber}
+Package: ${invoiceForm.package}
+
+Message:
+${invoiceForm.message || 'No additional message provided'}
+    `.trim();
+    
+    // Construct mailto URL
+    const mailtoUrl = `mailto:${emailConfig.recipient}?subject=${encodeURIComponent(emailConfig.subjects.invoice)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open default email client
+    window.open(mailtoUrl, '_blank');
+    
+    // Show success message and reset form
     setTimeout(() => {
-      alert('Thank you! Your invoice request has been submitted. Our team will contact you shortly.');
+      alert('Thank you! Your email client has been opened with the invoice request details. Please send the email to complete your submission.');
       setInvoiceForm({
         name: '',
         company: '',
@@ -133,7 +152,7 @@ const Pricing = () => {
       });
       setInvoiceDialogOpen(false);
       setIsSubmitting(false);
-    }, 1000);
+    }, 500);
   };
 
   return (

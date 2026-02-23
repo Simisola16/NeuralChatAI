@@ -11,6 +11,15 @@ export const siteConfig = {
   language: "en",
 };
 
+// -- Email Configuration ------------------------------------------------------
+export const emailConfig = {
+  recipient: "enterprise@neuralchat.ai",
+  subjects: {
+    contact: "New Contact Form Submission - NeuralChat AI",
+    invoice: "New Invoice Request - NeuralChat AI",
+  },
+};
+
 // -- Hero Section -------------------------------------------------------------
 export const heroConfig = {
   backgroundImage: "/hero-bg.jpg",

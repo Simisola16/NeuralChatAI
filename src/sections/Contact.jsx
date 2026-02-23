@@ -2,10 +2,14 @@ import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send, Mail, Phone, User, MessageSquare } from 'lucide-react';
+import { emailConfig } from '../config';
+
 
 
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -62,13 +66,31 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Construct email body
+    const emailBody = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Message:
+${formData.message}
+    `.trim();
+    
+    // Construct mailto URL
+    const mailtoUrl = `mailto:${emailConfig.recipient}?subject=${encodeURIComponent(emailConfig.subjects.contact)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open default email client
+    window.open(mailtoUrl, '_blank');
+    
+    // Show success message and reset form
     setTimeout(() => {
-      alert('Thank you for your message! Our team will contact you shortly.');
+      alert('Thank you for your message! Your email client has been opened with the form details. Please send the email to complete your submission.');
       setFormData({ name: '', email: '', phone: '', message: '' });
       setIsSubmitting(false);
-    }, 1000);
+    }, 500);
   };
+
+
+
 
   return (
     <section
