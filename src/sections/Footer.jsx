@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Instagram, Twitter, Youtube, Music2, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Instagram, Twitter, Youtube, Music2, Send } from 'lucide-react';
 import { footerConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -147,7 +147,7 @@ const Footer = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Footer grid - Main content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-12 md:mb-20">
             {/* Brand */}
             <div className="sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -195,46 +195,6 @@ const Footer = () => {
                     </button>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-display text-xs md:text-sm uppercase tracking-wider text-white mb-4 md:mb-6">
-                {footerConfig.contactTitle}
-              </h4>
-              <ul className="space-y-3 md:space-y-4">
-                <li className="flex items-start gap-2 md:gap-3">
-                  <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 text-neon-soft/60 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-[10px] md:text-xs text-white/50">{footerConfig.emailLabel}</p>
-                    <a 
-                      href={`mailto:${footerConfig.email}`} 
-                      className="text-xs md:text-sm text-white hover:text-neon-soft transition-colors"
-                    >
-                      {footerConfig.email}
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2 md:gap-3">
-                  <Phone className="w-3.5 h-3.5 md:w-4 md:h-4 text-neon-soft/60 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-[10px] md:text-xs text-white/50">{footerConfig.phoneLabel}</p>
-                    <a 
-                      href={`tel:${footerConfig.phone.replace(/\D/g, '')}`}
-                      className="text-xs md:text-sm text-white hover:text-neon-soft transition-colors"
-                    >
-                      {footerConfig.phone}
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-2 md:gap-3">
-                  <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 text-neon-soft/60 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-[10px] md:text-xs text-white/50">{footerConfig.addressLabel}</p>
-                    <span className="text-xs md:text-sm text-white">{footerConfig.address}</span>
-                  </div>
-                </li>
               </ul>
             </div>
 

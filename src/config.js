@@ -200,7 +200,7 @@ export const pricingConfig = {
       id: 1,
       name: "Chat plugins",
       price: "£1,400",
-      period: "one-time setup fee",
+      period: "one-time setup fee (excl. VAT)",
       description: "For growing businesses",
       features: [
         "Up to 50,000 conversations/month",
@@ -221,7 +221,7 @@ export const pricingConfig = {
       id: 2,
       name: "AI PLUGINS SUPPORTS",
       price: "£1,950",
-      period: "one time setup fee",
+      period: "one time setup fee (excl. VAT)",
       description: "For established companies",
       features: [
         "Unlimited conversations",
@@ -246,7 +246,7 @@ export const pricingConfig = {
       id: 3,
       name: "ENTERPRISE",
       price: "£2,599",
-      period: "one time setup fee",
+      period: "one time setup fee (excl. VAT)",
       description: "For large organizations",
       features: [
         "Unlimited conversations",

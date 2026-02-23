@@ -1,7 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Send, Mail, Phone, MapPin, User, MessageSquare } from 'lucide-react';
+import { Send, Mail, Phone, User, MessageSquare } from 'lucide-react';
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,45 +105,7 @@ const Contact = () => {
             <p className="text-sm md:text-base text-white/50 mb-6 md:mb-8">
               Whether you're looking for enterprise solutions or have questions about our platform, our team is here to help.
             </p>
-            
-            <div className="space-y-4 md:space-y-6">
-              <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 md:w-5 md:h-5 text-neon-cyan" />
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:enterprise@neuralchat.ai" className="text-sm md:text-base text-white hover:text-neon-soft transition-colors">
-                    enterprise@neuralchat.ai
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-4 h-4 md:w-5 md:h-5 text-neon-cyan" />
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider mb-1">Phone</p>
-                  <a href="tel:+18881234567" className="text-sm md:text-base text-white hover:text-neon-soft transition-colors">
-                    +1 (888) 123-4567
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-4 h-4 md:w-5 md:h-5 text-neon-cyan" />
-                </div>
-                <div>
-                  <p className="text-[10px] md:text-xs text-white/50 uppercase tracking-wider mb-1">Office</p>
-                  <span className="text-sm md:text-base text-white">
-                    500 AI Plaza, Suite 1000<br />
-                    San Francisco, CA 94105
-                  </span>
-                </div>
-              </div>
-            </div>
+
           </div>
 
           {/* Contact Form */}
