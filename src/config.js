@@ -220,7 +220,7 @@ export const pricingConfig = {
     {
       id: 2,
       name: "AI PLUGINS SUPPORTS",
-      price: "£1,950",
+      price: "£2,599",
       period: "one time setup fee (excl. VAT)",
       description: "For established companies",
       features: [
@@ -245,7 +245,7 @@ export const pricingConfig = {
     {
       id: 3,
       name: "ENTERPRISE",
-      price: "£2,599",
+      price: "£4,599",
       period: "one time setup fee (excl. VAT)",
       description: "For large organizations",
       features: [
