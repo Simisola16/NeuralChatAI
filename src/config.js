@@ -200,7 +200,7 @@ export const pricingConfig = {
       id: 1,
       name: "Chat plugins",
       price: "£1,400",
-      period: "one-time setup fee (excl. VAT)",
+      period: "(excl. VAT)",
       description: "For growing businesses",
       features: [
         "Up to 50,000 conversations/month",
@@ -211,6 +211,7 @@ export const pricingConfig = {
         "Basic custom training",
         "instant download after payment",
         "Free New features updates",
+        "One time setup fee",
       ],
       cta: "Click to Pay",
       paymentUrl: "https://www.paypal.com",
@@ -221,7 +222,7 @@ export const pricingConfig = {
       id: 2,
       name: "AI PLUGINS SUPPORTS",
       price: "£2,599",
-      period: "one time setup fee (excl. VAT)",
+      period: "(excl. VAT)",
       description: "For established companies",
       features: [
         "Unlimited conversations",
@@ -235,6 +236,7 @@ export const pricingConfig = {
         "SSO & advanced security",
         "instant download after payment",
         "Free New features updates",
+        "One time setup fee",
 
       ],
       cta: "Click to Pay",
@@ -246,7 +248,7 @@ export const pricingConfig = {
       id: 3,
       name: "ENTERPRISE",
       price: "£4,599",
-      period: "one time setup fee (excl. VAT)",
+      period: "(excl. VAT)",
       description: "For large organizations",
       features: [
         "Unlimited conversations",
@@ -259,6 +261,7 @@ export const pricingConfig = {
         "SSO & advanced security",
         "instant download after payment",
         "Free New features updates",
+        "One time setup fee",
       ],
       cta: "Click to Pay",
       paymentUrl: "https://www.paypal.com",
